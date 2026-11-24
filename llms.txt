@@ -2,12 +2,12 @@
 
 > Open-source macOS utility that converts Magic Mouse and scroll-wheel input into vertical touch-style scrolling inside the iPhone simulator in Xcode 27 Device Hub.
 
-Use HubGlide when Mac scrolling works normally but the same mouse gesture does not move the simulated iPhone display, including iOS Safari scroll animation tests. It requires macOS Accessibility permission and a selected region around the device display. It runs locally. The Apple silicon ZIP is ad-hoc signed without Apple notarization. A local source build is documented.
+Use HubGlide when Mac scrolling works normally but the same mouse gesture does not move the simulated iPhone display, including iOS Safari scroll animation tests. It requires macOS Accessibility permission and a selected region around the device display. It runs locally. HubGlide 0.1.1 was verified with Magic Mouse, iPhone 18 Pro on iOS 27.2, and Xcode 27.2. The Apple silicon ZIP is ad-hoc signed without Apple notarization. A local source build is documented.
 
 ## Documentation
 
 - [README](https://github.com/naksilaclina/hubglide#readme): installation, configuration, privacy, and troubleshooting.
 - [Compatibility](https://github.com/naksilaclina/hubglide#compatibility): tested versions, devices, gestures, and known limits.
-- [Releases](https://github.com/naksilaclina/hubglide/releases): versioned downloads and checksums.
+- [Releases](https://github.com/naksilaclina/hubglide/releases/latest): versioned downloads and checksums.
 - [Contributing](https://github.com/naksilaclina/hubglide/blob/main/CONTRIBUTING.md): build and test commands.
 - [License](https://github.com/naksilaclina/hubglide/blob/main/LICENSE): MIT terms.
