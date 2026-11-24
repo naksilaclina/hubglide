@@ -1,0 +1,24 @@
+name: Report a bug
+description: Report a scrolling, setup, or compatibility problem
+body:
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: HubGlide, macOS, Xcode, and simulator runtime
+    validations:
+      required: true
+  - type: input
+    id: devices
+    attributes:
+      label: Devices
+      description: Mac, simulated device model, and mouse or trackpad
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happens?
+      description: Include steps, expected results, and what works with HubGlide paused.
+    validations:
+      required: true
