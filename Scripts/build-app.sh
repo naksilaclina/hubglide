@@ -32,7 +32,10 @@ done
 swift Scripts/icon.swift "$staging/HubGlide.iconset"
 iconutil -c icns "$staging/HubGlide.iconset" -o "$bundle/Contents/Resources/HubGlide.icns"
 cp LICENSE "$bundle/Contents/Resources/LICENSE"
-codesign --force --sign "${HUBGLIDE_SIGN_IDENTITY:--}" --options runtime --timestamp=none "$bundle"
+identity=${HUBGLIDE_SIGN_IDENTITY:--}
+timestamp=--timestamp
+if [[ "$identity" == "-" ]]; then timestamp=--timestamp=none; fi
+codesign --force --sign "$identity" --options runtime "$timestamp" "$bundle"
 codesign --verify --strict "$bundle"
 mv -- "$bundle" "$app"
 printf 'Built %s\n' "$app"

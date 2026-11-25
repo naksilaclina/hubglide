@@ -2,15 +2,15 @@
 
 # HubGlide
 
-**Magic Mouse and scroll-wheel input for the iPhone simulator in Xcode 27 Device Hub.**
+**Mouse scrolling for the iPhone simulator in Xcode 27 Device Hub.**
 
-HubGlide is an open-source macOS menu bar utility for cases where a Magic Mouse scrolls normally in Mac apps but an iPhone simulator in Device Hub ignores the same gesture. It turns vertical scrolling over the selected simulator display into a continuous touch-style drag. It's designed for testing scroll-driven CSS and JavaScript animations in **iOS Safari inside the simulator**.
+HubGlide is an open-source macOS menu bar utility for cases where a mouse scrolls normally in Mac apps but an iPhone simulator in Device Hub ignores the same gesture. It turns vertical scrolling over the selected simulator display into a continuous touch-style drag. It's designed for testing scroll-driven CSS and JavaScript animations in **iOS Safari inside the simulator**.
 
 [Releases and downloads](https://github.com/naksilaclina/hubglide/releases/latest) · [Report a problem](https://github.com/naksilaclina/hubglide/issues/new/choose) · [Project facts for coding assistants](llms.txt)
 
 ## The problem
 
-Xcode 27 moved iPhone simulation into Device Hub. Apple documents native scroll support for standard UIKit components. In the setup that prompted HubGlide, Magic Mouse scrolling worked in macOS Chrome, but iPhone Safari in Device Hub needed a button-held drag.
+Xcode 27 moved iPhone simulation into Device Hub. Apple documents native scroll support for standard UIKit components. Some setups still require a button-held drag in iPhone Safari even when mouse scrolling works in macOS apps.
 
 Page Up and Page Down move whole sections at once, which makes it hard to spot when a scroll-linked animation starts or reverses. HubGlide keeps the page in iOS Safari and uses the magnitude, direction, and timing of Mac scroll input to move it. The output is a simulated drag, so its motion can differ from a physical iPhone flick.
 
@@ -52,7 +52,8 @@ Reselect the display after resizing, rotating, changing zoom, or toggling a side
 | Target | iOS Simulator in Apple Device Hub for Xcode 27 |
 | Verified with HubGlide 0.1.1 | Apple silicon, macOS 27.2, Xcode 27.2, iPhone 18 Pro on iOS 27.2, Magic Mouse |
 | Gesture | Vertical Mac scroll translated to touch-style dragging |
-| Other devices | Other mouse models, trackpads, iPad models and physical iPhones are unverified |
+| Input support | Standard vertical scroll events from conventional mouse wheels and precision devices. Other mouse models and trackpads are unverified on hardware. |
+| Other Apple devices | iPad models and physical iPhones are unverified |
 | Window layout | One selected display at a time |
 
 At the edge of the selected area, a long continuous gesture can run out of drag space. Lift your finger briefly and scroll again. HubGlide handles the vertical component only. Command-, Control-, or Option-modified scrolling passes through.
@@ -77,4 +78,4 @@ Accessibility permission is required for input handling. HubGlide does not recor
 
 Run `swift test` for motion and display-selection checks. If you report an issue, include macOS, Xcode and simulator versions, the input device, and whether button-held dragging works. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-HubGlide is an independent project. Apple, Xcode, Device Hub and Magic Mouse are used to identify compatibility. [MIT License](LICENSE).
+HubGlide is an independent project. Apple, Xcode and Device Hub are used to identify compatibility. [MIT License](LICENSE).
